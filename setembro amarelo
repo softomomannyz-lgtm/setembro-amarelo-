@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Setembro Amarelo 💛</title>
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-  <!-- Fonte bonita do Google Fonts -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
@@ -35,6 +34,128 @@
       max-width: 700px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       font-size: 1.5em;
+      font-style: italic;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .frase.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    button {
+      background: #ffcc00;
+      border: none;
+      padding: 12px 20px;
+      margin-top: 10px;
+      border-radius: 12px;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    .ajuda {
+      background: #fff3b0;
+      margin: 20px auto 40px;
+      padding: 25px;
+      border-radius: 12px;
+      max-width: 700px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      font-size: 1.2em;
+      line-height: 1.5;
+      text-align: left;
+    }
+    .ajuda h2 {
+      margin-top: 0;
+    }
+    .ajuda a {
+      color: #ff6600;
+      text-decoration: none;
+    }
+    .ajuda a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      margin-top: auto;
+      padding: 15px;
+      background: #ffcc00;
+      font-weight: bold;
+    }
+    @media (max-width: 600px) {
+      .frase {
+        font-size: 1.2em;
+        padding: 20px;
+      }
+      header {
+        font-size: 1.5em;
+      }
+      .ajuda {
+        font-size: 1em;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>🌻 Setembro Amarelo 🌻</header>
+
+  <div id="frase" class="frase"></div>
+  <button onclick="mostrarFrase()">Nova frase ✨</button>
+
+  <div class="ajuda">
+    <h2>📞 Precisa de ajuda?</h2>
+    <ul>
+      <li><strong>CVV 188</strong> – Centro de Valorização da Vida</li>
+      <li><a href="https://www.cvv.org.br" target="_blank">cvv.org.br</a></li>
+    </ul>
+    <p>💡 Sinta-se livre para usar e compartilhar este site com quem possa precisar de uma palavra de esperança.</p>
+  </div>
+
+  <footer>💛 Falar é a melhor solução | CVV 188 💛</footer>
+
+  <script>
+    const frases = [
+      "Você não está sozinho. Sempre existe alguém disposto a te ouvir.",
+      "A sua vida é importante. Você é único e insubstituível.",
+      "Pequenos passos também levam a grandes conquistas.",
+      "Pedir ajuda é um ato de coragem, não de fraqueza.",
+      "O amanhã pode trazer novas oportunidades. Continue.",
+      "A esperança pode florescer mesmo nos dias mais difíceis.",
+      "A sua história ainda tem muitos capítulos lindos pela frente.",
+      "Você é mais forte do que imagina.",
+      "Mesmo a noite mais escura termina com o nascer do sol.",
+      "Cada dia é uma nova chance para recomeçar.",
+      "Acredite no seu potencial, você é capaz.",
+      "Não se cobre demais, cuide de você com amor.",
+      "Respire fundo e siga em frente, um passo de cada vez.",
+      "Momentos difíceis passam, a sua luz permanece.",
+      "Sempre há motivos para sorrir, mesmo que pequenos.",
+      "A vida é preciosa, valorize cada instante.",
+      "Coragem não é ausência de medo, é seguir apesar dele.",
+      "Permita-se sentir, mas nunca se permita desistir.",
+      "Você merece dias de alegria e serenidade.",
+      "Acredite: dias melhores estão por vir."
+    ];
+
+    function mostrarFrase() {
+      const fraseEl = document.getElementById("frase");
+      fraseEl.classList.remove("show"); 
+      setTimeout(() => {
+        const indice = Math.floor(Math.random() * frases.length);
+        fraseEl.textContent = frases[indice];
+        fraseEl.classList.add("show"); 
+      }, 200);
+    }
+
+    window.onload = mostrarFrase;
+  </script>
+</body>
+</html>      font-size: 1.5em;
       font-style: italic;
       opacity: 0;
       transform: translateY(10px);
