@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Setembro Amarelo 💛</title>
+  <!-- Fonte bonita do Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fffbea;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background: #ffcc00;
+      padding: 20px;
+      color: #333;
+      font-size: 2em;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .frase {
+      background: #fff;
+      margin: 40px auto 20px;
+      padding: 30px;
+      border-radius: 16px;
+      max-width: 700px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      font-size: 1.5em;
+      font-style: italic;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .frase.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    button {
+      background: #ffcc00;
+      border: none;
+      padding: 12px 20px;
+      margin-top: 10px;
+      border-radius: 12px;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    footer {
+      margin-top: auto;
+      padding: 15px;
+      background: #ffcc00;
+      font-weight: bold;
+    }
+    @media (max-width: 600px) {
+      .frase {
+        font-size: 1.2em;
+        padding: 20px;
+      }
+      header {
+        font-size: 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>🌻 Setembro Amarelo 🌻</header>
+
+  <div id="frase" class="frase"></div>
+  <button onclick="mostrarFrase()">Nova frase ✨</button>
+
+  <footer>💛 Falar é a melhor solução | CVV 188 💛</footer>
+
+  <script>
+    const frases = [
+      "Você não está sozinho. Sempre existe alguém disposto a te ouvir.",
+      "A sua vida é importante. Você é único e insubstituível.",
+      "Pequenos passos também levam a grandes conquistas.",
+      "Pedir ajuda é um ato de coragem, não de fraqueza.",
+      "O amanhã pode trazer novas oportunidades. Continue.",
+      "A esperança pode florescer mesmo nos dias mais difíceis.",
+      "A sua história ainda tem muitos capítulos lindos pela frente.",
+      "Você é mais forte do que imagina.",
+      "Mesmo a noite mais escura termina com o nascer do sol."
+    ];
+
+    function mostrarFrase() {
+      const fraseEl = document.getElementById("frase");
+      fraseEl.classList.remove("show"); // tira a animação antes de trocar
+      setTimeout(() => {
+        const indice = Math.floor(Math.random() * frases.length);
+        fraseEl.textContent = frases[indice];
+        fraseEl.classList.add("show"); // reaplica animação
+      }, 200);
+    }
+
+    // Exibir uma frase inicial
+    window.onload = mostrarFrase;
+  </script>
+</body>
+</html>
